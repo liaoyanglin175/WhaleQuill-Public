@@ -1,0 +1,15 @@
+export const plannerEnglish:Record<string,string>={
+ '日程':'Planner','待办':'Tasks','行程':'Schedule','日程事项':'Planner items','日程视图':'Planner views','今日行程':'Today’s schedule','鲸笺便签':'Jingjian task note',
+ '记下一件要做的事…':'Something to do…','安排一段时间…':'Make time for something…','日期（可选）':'Date (optional)','行程名称':'Event name','行程日期':'Event date',
+ '开始时间':'Start time','结束时间（可选）':'End time (optional)','结束日期（可选）':'End date (optional)','地点（可选）':'Location (optional)','备注（可选）':'Notes (optional)',
+ '地点与更多信息':'Location & details','全天':'All day','添加':'Add','添加行程':'Add event','编辑行程':'Edit event','编辑行程：{0}':'Edit event: {0}','保存行程':'Save event',
+ '删除行程：{0}':'Delete event: {0}','事项操作':'Item actions','事项操作：{0}':'Actions for {0}','重要':'Important','标为重要':'Mark important','取消重要':'Remove importance',
+ '未定日期':'Unscheduled','逾期':'Overdue','之后':'Upcoming','往期行程':'Past events','收起往期':'Hide past events','行程已添加':'Event added',
+ '没有匹配的行程。':'No matching events.','暂时没有行程。':'No upcoming events.','完成的待办次日移入回收站，可恢复。':'Completed tasks move to Trash the next day and can be restored.',
+ '清理方式可在设置中调整。':'Adjust cleanup in Settings.','搜索待办与行程…':'Search tasks & events…','待办清理':'Task cleanup','次日清理已完成待办':'Clear completed tasks the next day',
+ '按本地日期移入回收站，可恢复。程序关闭时，下次打开处理。':'Move to Trash by local date. If the app is closed, cleanup runs at the next launch.',
+ '待办清理未完成，原内容已保留。':'Task cleanup could not finish. Your items have been kept.','请检查事项名称、日期和时间。':'Check the name, date and time.',
+ '结束时间不能早于开始时间':'End time must not be earlier than start time','请设置开始时间':'Choose a start time','请选择行程日期':'Choose an event date',
+ '最近留下的记录':'Recent notes','回忆操作':'Memory actions','本次略过':'Skip for now','继续翻阅':'Keep reading','再看一些':'Read more','本次先看到这里。':'That’s all for now.',
+ '写下一条，留待日后翻阅。':'Write a note to revisit later.','重新翻阅':'Browse again','将这条行程移入回收站？':'Move this event to Trash?','删除行程':'Delete event',
+};

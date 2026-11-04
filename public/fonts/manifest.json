@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-28",
+  "fonts": [
+    {
+      "id": "han-sans",
+      "label": "思源黑体",
+      "family": "DFY Han Sans",
+      "version": "2.005R",
+      "file": "han-sans.woff2",
+      "source": "https://raw.githubusercontent.com/adobe-fonts/source-han-sans/2.005R/SubsetOTF/CN/SourceHanSansCN-Regular.otf",
+      "sourceSha256": "e2bc8a2e7f37474b774fff8db758681ece40bb6947a90d571bce9dd60671a8e4",
+      "sha256": "7ba6425caa15e9eeb3b99ac3678803cad2c7567a49689b9f4b6c38fe89fccd5c",
+      "bytes": 5887080,
+      "licenseFile": "han-sans-LICENSE.txt",
+      "licenseSource": "https://raw.githubusercontent.com/adobe-fonts/source-han-sans/2.005R/LICENSE.txt",
+      "modification": "Common-character subset, WOFF2 conversion and internal font family renamed to DFY; original glyph designs unchanged."
+    },
+    {
+      "id": "han-serif",
+      "label": "思源宋体",
+      "family": "DFY Han Serif",
+      "version": "2.003R",
+      "file": "han-serif.woff2",
+      "source": "https://raw.githubusercontent.com/adobe-fonts/source-han-serif/2.003R/SubsetOTF/CN/SourceHanSerifCN-Regular.otf",
+      "sourceSha256": "3754ea669c530e2473354f8f6d9f79680a44d7e26ec7d00eeabee4a7e0753c5d",
+      "sha256": "7069944fc6f13a52ae2ea17746e3dbf3372bfa38218ac8277024c8fc4aea2c20",
+      "bytes": 8012792,
+      "licenseFile": "han-serif-LICENSE.txt",
+      "licenseSource": "https://raw.githubusercontent.com/adobe-fonts/source-han-serif/2.003R/LICENSE.txt",
+      "modification": "Common-character subset, WOFF2 conversion and internal font family renamed to DFY; original glyph designs unchanged."
+    },
+    {
+      "id": "wenkai",
+      "label": "霞鹜文楷",
+      "family": "DFY Wen Kai",
+      "version": "v1.530",
+      "file": "wenkai.woff2",
+      "source": "https://github.com/lxgw/LxgwWenKai/releases/download/v1.530/LXGWWenKai-Regular.ttf",
+      "sourceSha256": "2d73eea94ad808999d90c0000c239a84a33b09d4bc6ab6c5b8bbf1eda8a7fc8b",
+      "sha256": "68506558d4112369a1ce24d3a09009ee33ed8b19f2fe601ff5475dc4f9504549",
+      "bytes": 6486112,
+      "licenseFile": "wenkai-LICENSE.txt",
+      "licenseSource": "https://raw.githubusercontent.com/lxgw/LxgwWenKai/v1.530/OFL.txt",
+      "modification": "Common-character subset, WOFF2 conversion and internal font family renamed to DFY; original glyph designs unchanged."
+    },
+    {
+      "id": "fangsong",
+      "label": "朱雀仿宋",
+      "family": "DFY Fang Song",
+      "version": "v0.212",
+      "file": "fangsong.woff2",
+      "source": "https://github.com/TrionesType/zhuque/releases/download/v0.212/ZhuqueFangsong-v0.212.zip",
+      "sourceSha256": "bb8b661a7643d2296a72d9d10530a00949419c4e527fb61783f73c2ba1a8c062",
+      "sha256": "21f36044718d0064fa5a39cc09bfbdc9fdb9c369c5938ba0758260aa08da3605",
+      "bytes": 4578716,
+      "licenseFile": "fangsong-LICENSE.txt",
+      "licenseSource": "https://raw.githubusercontent.com/TrionesType/zhuque/v0.212/LICENSE.txt",
+      "modification": "Common-character subset, WOFF2 conversion and internal font family renamed to DFY; original glyph designs unchanged."
+    },
+    {
+      "id": "mono",
+      "label": "更纱等宽 SC",
+      "family": "DFY Mono",
+      "version": "v1.0.43",
+      "file": "mono.woff2",
+      "source": "https://github.com/be5invis/Sarasa-Gothic/releases/download/v1.0.43/SarasaMonoSC-TTF-Unhinted-1.0.43.7z",
+      "sourceSha256": "b2f09e089c0dfb049860635a91766b7decc19b7ef6df8ae9bb11a22451845612",
+      "sha256": "e7938589a4d5429da68ced1b2bb4fd6158c8bda61f82031b688b1c8c21ed5d33",
+      "bytes": 3941752,
+      "licenseFile": "mono-LICENSE.txt",
+      "licenseSource": "https://raw.githubusercontent.com/be5invis/Sarasa-Gothic/v1.0.43/LICENSE",
+      "modification": "Common-character subset, WOFF2 conversion and internal font family renamed to DFY; original glyph designs unchanged."
+    }
+  ]
+}

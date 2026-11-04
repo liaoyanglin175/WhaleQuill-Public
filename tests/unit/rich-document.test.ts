@@ -1,0 +1,19 @@
+import {describe,it,expect} from 'vitest';
+import {getSchema,Mark} from '@tiptap/core';
+import StarterKit from '@tiptap/starter-kit';
+import {documentText,plainDocument,richDocumentSchema,publicDocument} from '../../src/domain/rich-document';
+import {recordSchema,createRecord,encodeCompleteArchive,decodeArchive} from '../../src/domain/models';
+import {projectEditor} from '../../src/domain/rich-editor';
+describe('排版文档与原文',()=>{
+ it('排版内修改记忆文字保留原话并标为待核对，撤销回原话后恢复定位',()=>{const id=crypto.randomUUID(),createdAt=new Date().toISOString(),memory=Mark.create({name:'memory',addAttributes(){return{id:{default:null},createdAt:{default:null}};}}),schema=getSchema([StarterKit,memory]);const doc=plainDocument('改过的文字');doc.content[0].content![0].marks=[{type:'memory',attrs:{id,createdAt}}];const original={id,text:'原话',start:0,end:2,createdAt,stale:false};const stale=projectEditor(schema.nodeFromJSON(doc)).highlights([original]);expect(stale).toEqual([{...original,stale:true}]);doc.content[0].content![0].text='原话';expect(projectEditor(schema.nodeFromJSON(doc)).highlights(stale)[0]).toMatchObject({text:'原话',stale:false,start:0,end:2});});
+ it('旧正文按段落转换，保留空行、中文和emoji，颜色不会创建记忆',()=>{const doc=plainDocument('中文😀\n\n最后一行');doc.content[0].content![0].marks=[{type:'textStyle',attrs:{color:'#2255aa'}}];expect(richDocumentSchema.safeParse(doc).success).toBe(true);expect(documentText(doc)).toBe('中文😀\n\n最后一行');expect(JSON.stringify(doc)).not.toContain('memory');});
+ it('排版节点的文字投影与编辑器位置保持一致，包含空段落和换行',()=>{const doc=plainDocument('甲😀\n\n乙'),schema=getSchema([StarterKit]),node=schema.nodeFromJSON(doc),p=projectEditor(node);expect(p.body).toBe(documentText(doc));for(const offset of [0,1,3,4,5,6])expect(p.toText(p.toPosition(offset))).toBe(offset);});
+ it('拒绝危险链接、样式注入和超深文档',()=>{const doc=plainDocument('文字');doc.content[0].content![0].marks=[{type:'link',attrs:{href:'javascript:alert(1)'}}];expect(richDocumentSchema.safeParse(doc).success).toBe(false);doc.content[0].content![0].marks=[{type:'textStyle',attrs:{color:'red;url(x)'}}];expect(richDocumentSchema.safeParse(doc).success).toBe(false);let nested:any={type:'paragraph'};for(let i=0;i<30;i++)nested={type:'blockquote',content:[nested]};expect(richDocumentSchema.safeParse({type:'doc',content:[nested]}).success).toBe(false);});
+ it('新备份保留排版，旧备份默认纯文本，正文不一致时拒绝保存',()=>{const record={...createRecord(),title:'样式',body:'正文',document:plainDocument('正文')};const text=encodeCompleteArchive({records:[{...record,deletedAt:null}],tasks:[]});expect(decodeArchive(text).version).toBe(4);expect(recordSchema.parse({...record,document:undefined}).document).toBeNull();expect(recordSchema.safeParse({...record,body:'其他内容'}).success).toBe(false);});
+ it('公开版本保留排版但剥离私人记忆与段落ID',()=>{const doc=plainDocument('原话');doc.content[0].attrs={id:crypto.randomUUID()};doc.content[0].content![0].marks=[{type:'bold'},{type:'memory',attrs:{id:crypto.randomUUID(),createdAt:new Date().toISOString()}}];const copy=publicDocument(doc)!;expect(JSON.stringify(copy)).not.toContain('memory');expect(JSON.stringify(copy)).not.toContain('createdAt');expect(copy.content[0].content![0].marks).toEqual([{type:'bold'}]);expect(documentText(copy)).toBe('原话');expect(doc.content[0].content![0].marks).toHaveLength(2);});
+ it('旧Windows换行的跨段记忆在首次排版时保留原意与有效定位',()=>{
+  const id=crypto.randomUUID(),createdAt=new Date().toISOString(),memory=Mark.create({name:'memory',addAttributes(){return{id:{default:null},createdAt:{default:null}};}}),schema=getSchema([StarterKit,memory]);
+  const doc=plainDocument('甲\n乙');for(const paragraph of doc.content)paragraph.content![0].marks=[{type:'memory',attrs:{id,createdAt}}];
+  const projection=projectEditor(schema.nodeFromJSON(doc));expect(projection.highlights([{id,createdAt,text:'甲\r\n乙',start:0,end:4,stale:false}])).toEqual([{id,createdAt,text:'甲\n乙',start:0,end:3,stale:false}]);
+ });
+});

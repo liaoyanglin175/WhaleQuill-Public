@@ -1,0 +1,13 @@
+.creation-preview{margin:14px 0 6px;padding:13px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.creation-heading strong{font-size:13px;font-weight:600}.creation-hint{font-size:11px;color:var(--ink-muted);margin:5px 0 12px;line-height:1.7}
+.creation-item{border-top:1px solid var(--line);padding:11px 0}.creation-select{display:flex;align-items:center;gap:6px;color:var(--ink-muted);font-size:11px;margin-bottom:5px}.creation-select input{width:14px;height:14px;margin:0}
+.creation-item summary{cursor:pointer;overflow-wrap:anywhere;line-height:1.7;font-size:13px}.creation-item summary time{display:block;color:var(--ink-muted);font-size:11px;padding-left:14px}
+.creation-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0 4px}.creation-fields label{font-size:11px;color:var(--ink-secondary);display:grid;gap:5px;min-width:0}.creation-fields label:first-child,.creation-fields label:has(textarea){grid-column:1/-1}
+.creation-fields input,.creation-fields textarea{width:100%;min-width:0;border:1px solid var(--line);border-radius:5px;background:var(--surface);padding:7px;font-size:12px}.creation-fields textarea{min-height:80px;resize:vertical}
+.creation-result-actions{display:flex;gap:13px;flex-wrap:wrap}.creation-result-actions button{font-size:12px;padding:0}.creation-preview>p[role=status]{font-size:12px;color:var(--ink-secondary);line-height:1.7}
+.quill-work-scene{margin:12px auto 4px;width:180px;max-width:100%;text-align:center}.quill-work-scene video{display:block;width:180px;max-width:100%;aspect-ratio:16/9;object-fit:contain}.quill-work-scene figcaption{font-size:11px;color:var(--ink-muted);line-height:1.6}
+html[data-quill-working=true] .companion-dock{visibility:hidden;pointer-events:none}
+.note-inquiry:has(.creation-preview):not(.is-docked){height:min(710px,calc(100dvh - 144px));max-height:calc(100dvh - 144px)}
+.note-inquiry:has(.creation-preview) .ai-question-form textarea{height:50px;min-height:50px}
+
+.creation-fields [aria-invalid=true]{border-color:var(--danger)}.creation-field-error{color:var(--danger);font-size:12px;line-height:1.6;overflow-wrap:anywhere}

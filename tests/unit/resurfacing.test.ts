@@ -1,0 +1,20 @@
+import {afterEach,describe,it,expect,vi} from 'vitest';
+import {createRecord} from '../../src/domain/models';
+import {addHighlight} from '../../src/domain/highlights';
+import {dailyResurfacing,localDay,resurfacingCandidates} from '../../src/domain/resurfacing';
+import type {MemoryPreferences} from '../../src/domain/resurfacing';
+import {readMemoryPreferences} from '../../src/storage/memory-preferences';
+const now=new Date('2026-10-27T12:00:00');
+const record=(body:string,days=12)=>({...createRecord(),title:'旧日记录',body,createdAt:new Date(now.getTime()-days*86_400_000).toISOString(),updatedAt:new Date(now.getTime()-days*86_400_000).toISOString()});
+const prefs=(date=now):MemoryPreferences=>({day:localDay(date),frequency:'daily',selected:'',dismissed:[],shown:{},hiddenToday:false});
+afterEach(()=>vi.unstubAllGlobals());
+describe('轻量旧事回顾',()=>{
+ it('没有划重点的普通旧记录也能找回，原文位置精确且一次只选一条',()=>{const notes=[record('  河边走过的路。\r\n值得再看。'),record('另一件旧事')];const cue=dailyResurfacing(notes,prefs(),now)!;expect(cue.highlight).toBeUndefined();expect(cue.record.body.slice(cue.start,cue.end)).toBe(cue.text);expect(cue.text).not.toMatch(/^\s/);});
+ it('当天普通记录、未来时间、空白与回收记录不进入旧事池',()=>{const today=record('刚记下的内容',0),future=record('未来记录',-1),empty=record('  '),deleted={...record('已经删除'),deletedAt:now.toISOString()};expect(resurfacingCandidates([today,future,empty,deleted],now)).toEqual([]);});
+ it('有效手划重点可当天出现，失效旧重点不会作为引用回来',()=>{let note=record('今天作出的重要决定。',0);note={...note,highlights:addHighlight(note,0,note.body.length)};const cue=dailyResurfacing([note],prefs(),now)!;expect(cue.highlight?.id).toBe(note.highlights[0].id);expect(cue.text).toBe(note.body);expect(resurfacingCandidates([{...note,highlights:note.highlights.map(h=>({...h,stale:true}))}],now)).toEqual([]);});
+ it('当天选择稳定，新增或重新排序记录不会替换已选内容',()=>{const a=record('旧事甲'),b=record('旧事乙'),selected=dailyResurfacing([a,b],prefs(),now)!;const saved={...prefs(),selected:selected.id,shown:{[selected.record.id]:localDay(now)}};expect(dailyResurfacing([record('新候选'),b,a],saved,now)?.id).toBe(selected.id);});
+ it('换一条排除当前内容，展示过的记录冷却七天后再进入池',()=>{const note=record('值得重看的内容'),shown={...prefs(),shown:{[note.id]:'2026-10-26'}};expect(dailyResurfacing([note],shown,now)).toBeNull();const later=new Date('2026-11-02T12:00:00');expect(dailyResurfacing([note],{...shown,day:localDay(later)},later)?.record.id).toBe(note.id);const first=dailyResurfacing([note],prefs(),now)!;expect(dailyResurfacing([note],{...prefs(),dismissed:[first.id]},now)).toBeNull();});
+ it('减少出现最多每三天一次，关闭与今天收起均不展示',()=>{const note=record('旧事');let count=0;for(let i=0;i<6;i++){const date=new Date(now.getTime()+i*86_400_000);if(dailyResurfacing([note],{...prefs(date),frequency:'quiet'},date))count++;}expect(count).toBe(2);expect(dailyResurfacing([note],{...prefs(),frequency:'off'},now)).toBeNull();expect(dailyResurfacing([note],{...prefs(),hiddenToday:true},now)).toBeNull();});
+ it('截断摘录不切开代理字符，近期词语线索有真实对应',()=>{const note=record('a'.repeat(159)+'😀后续内容'),cue=dailyResurfacing([note],prefs(),now)!;expect(cue.text).toBe('a'.repeat(159));expect(note.body.slice(cue.start,cue.end)).toBe(cue.text);const old=record('离线导出方案需要再次验证。'),recent={...record('离线导出方案今天继续讨论。',0),title:'离线导出方案'};expect(resurfacingCandidates([old,recent],now).find(c=>c.record.id===old.id)?.reason).toBe('包含近期记录中的词');});
+ it('兼容旧关闭偏好，跨天清除当天收起但保留展示历史',()=>{vi.stubGlobal('localStorage',{getItem:()=>JSON.stringify({disabled:true,day:'2026-10-26',dismissed:['old'],selected:'old',hiddenToday:true,shown:{a:'2026-10-25'}})});expect(readMemoryPreferences(now)).toMatchObject({frequency:'off',selected:'',dismissed:[],hiddenToday:false,shown:{a:'2026-10-25'}});});
+});

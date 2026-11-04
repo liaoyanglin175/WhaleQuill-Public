@@ -1,0 +1,105 @@
+/* Blue fish-girl palette follows the user's character reference. */
+:root { color: var(--ink); background: var(--canvas); --green: var(--action); --green-dark: var(--action-hover); --border: var(--line); --paper: var(--surface); }
+::selection { background: var(--surface-selected); }
+button:focus-visible, a:focus-visible { outline-color: var(--focus-ring); }
+input:focus-visible, textarea:focus-visible, select:focus-visible { outline-color: var(--focus-ring); }
+.sidebar { background: var(--surface-subtle); border-color: var(--line); }
+.brand { color: var(--ink); }
+.brand small, .eyebrow { color: var(--ink-muted); }
+.nav-item { color: var(--ink-secondary); }
+.nav-item.active { background: var(--surface-selected); color: var(--ink); }
+.nav-item:hover { background: var(--surface-selected); }
+.nav-item.active small { color: var(--ink-secondary); }
+.nav-divider, .insight-divider { background: var(--surface-subtle); }
+.new-record-button { border-color: var(--line); background: var(--surface); color: var(--ink-secondary); }
+.new-record-button:hover:not(:disabled) { background: var(--surface-selected); border-color: var(--line); }
+.storage-status { background: var(--surface-subtle); border-color: var(--line); color: var(--ink-secondary); }
+.online-dot { background: var(--success); box-shadow: 0 0 0 3px var(--shadow-color); }
+.record-list, .insight-panel { background: var(--surface); }
+.record-card.selected, .record-groups .record-card.selected, .draft-card.selected { background: var(--surface-selected); border-color: var(--line-strong); box-shadow: inset 3px 0 var(--shadow-color); }
+.record-card:hover, .record-groups .record-card:hover { background: var(--surface-selected); border-color: var(--line); }
+.record-filters button[aria-pressed=true] { background: var(--surface-selected); border-color: var(--line-strong); color: var(--ink-secondary); }
+.collection-card { background: var(--surface); border-color: var(--line); }
+.collection-card:hover:not(:disabled) { border-color: var(--line); background: var(--surface-selected); }
+.collection-count, .collection-card h3 { color: var(--ink-secondary); }
+.search-field:focus-within { border-color: var(--line-strong); box-shadow: 0 0 0 3px var(--shadow-color); }
+.welcome-button { background: var(--action); }
+.welcome-button:hover:not(:disabled) { background: var(--action); }
+.welcome-panel { background: var(--surface); }
+.welcome-panel h2 { color: var(--ink); }
+.welcome-panel h2 span, .header-dot { color: var(--ink-muted); }
+.art-ring { border-color: var(--line); }
+.art-spark { color: var(--ink-muted); }
+.overview-empty { background: var(--surface); }
+.coming-next { color: var(--ink-secondary); background: var(--surface-subtle); }
+
+.fish-illustration { display: block; width: 100%; height: 100%; object-fit: contain; user-select: none; -webkit-user-drag: none; }
+.brand .brand-portrait { display: block; flex: 0 0 39px; height: 39px; overflow: hidden; border-radius: 13px; background: var(--surface-subtle); border: 1px solid var(--line); }
+.brand .brand-portrait img { display: block; width: 64px; height: 64px; max-width: none; transform: translate(-13px, -2px); border-radius: 0; }
+.boot-screen > .fish-illustration { width: 158px; height: 158px; filter: drop-shadow(0 12px 13px var(--shadow-color)); }
+.welcome-art { width: 240px; height: 220px; margin-bottom: 16px; }
+.welcome-character, .insight-mascot-button, .overview-mascot { border: 0; padding: 0; background: transparent; position: relative; z-index: 1; }
+.welcome-character { width: 220px; height: 220px; }
+.welcome-character .fish-illustration { filter: drop-shadow(0 10px 10px var(--shadow-color)); animation: mascot-breathe 5s ease-in-out infinite; }
+.welcome-character:hover .fish-illustration { filter: drop-shadow(0 12px 12px var(--shadow-color)); }
+.insight-mascot-button { width: 118px; height: 118px; }
+.fish-message .fish-illustration { width: 118px; height: 118px; }
+.overview-heading { display: flex; align-items: center; gap: 19px; min-width: 0; }
+.overview-mascot { flex: 0 0 88px; width: 88px; height: 100px; }
+.overview-mascot:hover { transform: rotate(-4deg); }
+.overview-mascot .fish-illustration { filter: drop-shadow(0 7px 7px var(--shadow-color)); }
+
+/* Only the character and its controls receive events; the surrounding overlay is transparent to editing. */
+.companion-dock { position: fixed; z-index: 6; right: 32px; bottom: 112px; width: 168px; color: var(--ink-secondary); pointer-events: none; isolation: isolate; }
+.companion-character { width: 168px; height: 174px; display: block; position: relative; padding: 0; border: 0; background: transparent; cursor: grab; touch-action: none; pointer-events: auto; perspective: 650px; -webkit-user-select: none; user-select: none; --turn-x: 0deg; --turn-y: 0deg; }
+.companion-character:disabled { opacity: 1; cursor: default; }
+.companion-character:focus-visible { outline: 2px dashed var(--focus-ring); outline-offset: 0; border-radius: 26px; }
+.companion-figure { display: block; width: 100%; height: 100%; position: relative; transform: rotateX(var(--turn-x)) rotateY(var(--turn-y)); transform-origin: 50% 76%; transition: transform .18s ease-out; }
+.companion-figure .fish-illustration { position: relative; filter: drop-shadow(0 9px 7px var(--shadow-color)); animation: mascot-breathe 5s ease-in-out infinite; }
+.companion-shadow { position: absolute; width: 83px; height: 12px; border-radius: 50%; left: 50%; bottom: 1px; transform: translateX(-50%); background: var(--action); filter: blur(5px); }
+.is-held .companion-character { cursor: grabbing; }
+.is-held .companion-figure { transform: rotate(-3deg) scale(1.035); }
+.is-held .fish-illustration { animation-play-state: paused; }
+.mood-happy .fish-illustration { animation: mascot-delight .6s ease-out; }
+.mood-pout .fish-illustration { animation: mascot-pout .45s ease-out; }
+.mood-sleep .fish-illustration { animation: mascot-sleep 5s ease-in-out infinite; }
+.companion-caption { display: flex; align-items: center; justify-content: center; gap: 5px; font-size: 11px; font-weight: 600; margin-top: 7px; }
+.companion-caption > span:last-child { font-size: 9px; font-weight: 400; color: var(--ink-muted); margin-left: 2px; }
+.companion-online { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--action); }
+.companion-hint { display: block; text-align: center; font-size: 9px; color: var(--ink-muted); margin-top: 5px; }
+.companion-controls { display: flex; justify-content: center; gap: 4px; margin-top: 6px; opacity: .55; transition: opacity .2s; }
+.companion-dock:hover .companion-controls, .companion-dock:focus-within .companion-controls, .companion-dock.is-engaged .companion-controls { opacity: 1; }
+.companion-controls button { display: inline-flex; align-items: center; justify-content: center; width: 29px; height: 26px; padding: 0; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink-secondary); pointer-events: auto; box-shadow: 0 3px 8px var(--shadow-color); }
+.companion-controls button:hover:not(:disabled) { background: var(--surface-selected); color: var(--ink-secondary); }
+.companion-bubble { position: absolute; bottom: calc(100% + 4px); width: 100%; margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 13px 13px 5px 13px; box-shadow: 0 8px 24px var(--shadow-color); padding: 11px 12px; font-size: 11px; line-height: 1.8; color: var(--ink-secondary); opacity: 0; transform: translateY(5px); transition: opacity .18s, transform .18s; overflow-wrap: anywhere; }
+.companion-bubble.is-visible { opacity: 1; transform: translateY(0); }
+.companion-sparkles { position: absolute; right: 9px; top: 23px; color: var(--ink-muted); font-size: 26px; animation: mascot-spark .8s ease-out both; }
+.companion-zzz { position: absolute; right: 16px; top: 42px; color: var(--ink-muted); font-size: 17px; letter-spacing: 6px; transform: rotate(-12deg); animation: mascot-breathe 4s ease-in-out infinite; }
+.companion-dock.is-collapsed { width: 49px; height: 49px; }
+.companion-launcher { display: block; position: relative; width: 49px; height: 49px; padding: 0; border-radius: 18px; border: 1px solid var(--line); background: var(--surface); box-shadow: 0 5px 17px var(--shadow-color); overflow: hidden; pointer-events: auto; }
+.companion-launcher .fish-illustration { width: 82px; height: 82px; max-width: none; transform: translate(-17px, -4px); }
+.companion-launcher .companion-online { position: absolute; right: 4px; bottom: 4px; width: 6px; height: 6px; box-shadow: 0 0 0 2px var(--shadow-color); }
+
+@keyframes mascot-breathe { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes mascot-delight { 0%, 100% { transform: translateY(0); } 38% { transform: translateY(-9px) rotate(-3deg); } 70% { transform: translateY(-3px) rotate(2deg); } }
+@keyframes mascot-pout { 0%, 100% { transform: rotate(0); } 28% { transform: rotate(-3deg); } 65% { transform: rotate(3deg); } }
+@keyframes mascot-sleep { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.012); } }
+@keyframes mascot-spark { from { transform: scale(.3); opacity: 0; } 45% { opacity: 1; } to { transform: translateY(-9px) scale(1.1); opacity: .6; } }
+@media (max-width: 800px) {
+  .companion-dock { width: 126px; right: 16px; bottom: 114px; }
+  .companion-character { width: 126px; height: 130px; }
+  .companion-hint { font-size: 8px; }
+  .companion-caption { font-size: 10px; }
+  .companion-caption > span:last-child { font-size: 8px; }
+  .companion-controls { opacity: 1; }
+  .companion-zzz { right: 8px; top: 27px; font-size: 13px; }
+  .companion-bubble { padding: 9px 10px; font-size: 10px; }
+  .overview-heading { gap: 10px; }
+  .overview-mascot { flex-basis: 62px; width: 62px; height: 78px; }
+  .brand .brand-portrait { flex-basis: 32px; height: 32px; border-radius: 10px; }
+  .brand .brand-portrait img { width: 54px; height: 54px; transform: translate(-12px, -2px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .companion-figure { transform: none !important; }
+  .companion-dock *, .welcome-character .fish-illustration { animation: none !important; transition: none !important; }
+}

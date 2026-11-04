@@ -1,0 +1,121 @@
+{
+  "character": "大肥鱼",
+  "originalCharacter": "溟月",
+  "originalArtist": "上善无形",
+  "maidDesigner": "ZipZipPipe",
+  "animationSource": "PC2005-cloud/dsh-pet",
+  "sourceCommit": "f8fc9a8a18dafb9b3545b56b701ad7bc0fce2e89",
+  "importedAt": "2026-10-28",
+  "characterLicense": "CC-BY-NC-SA-4.0",
+  "animationTerms": "Upstream permits open-source use and prohibits commercial use; preserve attribution.",
+  "licenseUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "notice": "NOTICE.md",
+  "files": [
+    {
+      "file": "idle.webm",
+      "sha256": "deb965d05a85dacf5ff4a20faa757846f0d11679598c3ec578a5571487660395",
+      "bytes": 441437,
+      "source": "https://github.com/PC2005-cloud/dsh-pet/blob/f8fc9a8a18dafb9b3545b56b701ad7bc0fce2e89/dsh-pet/assets/webm/待机呼吸休闲.webm",
+      "modification": "Renamed only; video bytes unchanged."
+    },
+    {
+      "file": "walk.webm",
+      "sha256": "7dee1c14672f1f99bebe5e6f1a52d6664b851ed95f9958ac6c12b753a5e5cc81",
+      "bytes": 591446,
+      "source": "https://github.com/PC2005-cloud/dsh-pet/blob/f8fc9a8a18dafb9b3545b56b701ad7bc0fce2e89/dsh-pet/assets/webm/原地漂浮踏步.webm",
+      "modification": "Renamed only; video bytes unchanged."
+    },
+    {
+      "file": "pat.webm",
+      "sha256": "86dcb0c3dd7b651de9c107e927d57a5c4224599101706dbdcc782fa48bcd0ad7",
+      "bytes": 538110,
+      "source": "https://github.com/PC2005-cloud/dsh-pet/blob/f8fc9a8a18dafb9b3545b56b701ad7bc0fce2e89/dsh-pet/assets/webm/点击回应-开心跃动.webm",
+      "modification": "Renamed only; video bytes unchanged."
+    },
+    {
+      "file": "drag.webm",
+      "sha256": "31373a86026636eecc890db763760309360310eb095cf5575b13c9ca2a6cc80e",
+      "bytes": 464764,
+      "source": "https://github.com/PC2005-cloud/dsh-pet/blob/f8fc9a8a18dafb9b3545b56b701ad7bc0fce2e89/dsh-pet/assets/webm/被鼠标拖拽悬空反馈.webm",
+      "modification": "Renamed only; video bytes unchanged."
+    },
+    {
+      "file": "think.webm",
+      "sha256": "b4a36cfa28ea5d7089e362a01972c6e880297c6dcd0d39f1994efd889a3c1be5",
+      "bytes": 408849,
+      "source": "https://github.com/PC2005-cloud/dsh-pet/blob/f8fc9a8a18dafb9b3545b56b701ad7bc0fce2e89/dsh-pet/assets/webm/工作状态-思考冒泡.webm",
+      "modification": "Renamed only; video bytes unchanged."
+    },
+    {
+      "file": "sleep.webm",
+      "sha256": "31d4a6b36a29b2a4fe097384173d3bbeb3fa2f40f526b13191791456bf7507a1",
+      "bytes": 433769,
+      "source": "https://github.com/PC2005-cloud/dsh-pet/blob/f8fc9a8a18dafb9b3545b56b701ad7bc0fce2e89/dsh-pet/assets/webm/原地小憩沉眠.webm",
+      "modification": "Renamed only; video bytes unchanged."
+    },
+    {
+      "file": "poster.png",
+      "sha256": "a558e6f91e0af1d023c661bc847a11cb1c5d2d52d3df27fbae150465134c73fd",
+      "bytes": 115546,
+      "source": "idle.webm",
+      "modification": "First RGBA frame extracted with FFmpeg; transparent background retained."
+    },
+    {
+      "file": "look.webm",
+      "sha256": "a20ed02ccc5e72075a3ca83fabb57d9aac5ded699f52d00ec6de72069799fcd5",
+      "bytes": 427005,
+      "source": "https://raw.githubusercontent.com/PC2005-cloud/dsh-pet/f8fc9a8a18dafb9b3545b56b701ad7bc0fce2e89/dsh-pet/assets/webm/%E4%B8%9C%E5%BC%A0%E8%A5%BF%E6%9C%9B.webm",
+      "modification": "Renamed only; video bytes unchanged."
+    },
+    {
+      "file": "stretch.webm",
+      "sha256": "0ac66d918cc5efd49be1273c3830de73eae5f9bdcd5fcb968d1b2f9b487705ad",
+      "bytes": 396987,
+      "source": "https://raw.githubusercontent.com/PC2005-cloud/dsh-pet/f8fc9a8a18dafb9b3545b56b701ad7bc0fce2e89/dsh-pet/assets/webm/%E8%B6%85%E5%A4%A7%E4%BC%B8%E6%87%92%E8%85%B0.webm",
+      "modification": "Renamed only; video bytes unchanged."
+    },
+    {
+      "file": "yawn.webm",
+      "sha256": "2b23372e1ff2bc2f9078c09740708c960d4ea021f9fc3cca294d9df11e393ec8",
+      "bytes": 424352,
+      "source": "https://raw.githubusercontent.com/PC2005-cloud/dsh-pet/f8fc9a8a18dafb9b3545b56b701ad7bc0fce2e89/dsh-pet/assets/webm/%E5%93%88%E6%AC%A0%E8%BF%9E%E5%A4%A9.webm",
+      "modification": "Renamed only; video bytes unchanged."
+    },
+    {
+      "file": "wave.webm",
+      "sha256": "48cd729ccdcf746369942ea954d242e9afdd5643e1dac3827fa5e67450eb8776",
+      "bytes": 421669,
+      "source": "https://raw.githubusercontent.com/PC2005-cloud/dsh-pet/f8fc9a8a18dafb9b3545b56b701ad7bc0fce2e89/dsh-pet/assets/webm/%E7%82%B9%E5%87%BB%E5%9B%9E%E5%BA%94-%E5%85%83%E6%B0%94%E6%8C%A5%E6%89%8B.webm",
+      "modification": "Renamed only; video bytes unchanged."
+    },
+    {
+      "file": "shy.webm",
+      "sha256": "a04968bbc46d1ebea07f81e5dabd93b0b67a9d07f1371e9887b33075134ad00d",
+      "bytes": 538281,
+      "source": "https://raw.githubusercontent.com/PC2005-cloud/dsh-pet/f8fc9a8a18dafb9b3545b56b701ad7bc0fce2e89/dsh-pet/assets/webm/%E7%82%B9%E5%87%BB%E5%9B%9E%E5%BA%94-%E5%AE%B3%E7%BE%9E%E6%83%8A%E8%AE%B6.webm",
+      "modification": "Renamed only; video bytes unchanged."
+    },
+    {
+      "file": "laugh.webm",
+      "sha256": "f228279219f4084323ca1bfef1604f7c77bb3f505d45a8d1747b5ac3f9f2393b",
+      "bytes": 425393,
+      "source": "https://raw.githubusercontent.com/PC2005-cloud/dsh-pet/f8fc9a8a18dafb9b3545b56b701ad7bc0fce2e89/dsh-pet/assets/webm/%E7%82%B9%E5%87%BB%E5%9B%9E%E5%BA%94-%E6%8C%A0%E7%97%92%E5%92%AF%E5%92%AF%E7%AC%91.webm",
+      "modification": "Renamed only; video bytes unchanged."
+    },
+    {
+      "file": "bow.webm",
+      "sha256": "6536fb519ba73bbc338d30cf7286b14ffde1278b6d469c64573536dc0f896918",
+      "bytes": 365712,
+      "source": "https://raw.githubusercontent.com/PC2005-cloud/dsh-pet/f8fc9a8a18dafb9b3545b56b701ad7bc0fce2e89/dsh-pet/assets/webm/%E5%A5%B3%E4%BB%86%E5%B1%88%E8%86%9D%E7%A4%BC%E4%BB%AA.webm",
+      "modification": "Renamed only; video bytes unchanged."
+    },
+    {
+      "file": "writing.webm",
+      "sha256": "1da04162fed5cd52bd4a6a6027a6902f50bda0969d34465bc2d332cf3679bbd5",
+      "bytes": 447726,
+      "source": "https://github.com/PC2005-cloud/dsh-pet/blob/f8fc9a8a18dafb9b3545b56b701ad7bc0fce2e89/dsh-pet/assets/webm/轻快记录.webm",
+      "modification": "Renamed only; original continuous video bytes unchanged. User selected the in-panel recording action on 2026-10-30."
+    }
+  ],
+  "extendedAt": "2026-10-28"
+}

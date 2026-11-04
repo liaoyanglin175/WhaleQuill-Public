@@ -1,0 +1,36 @@
+.record-tag { display:inline-flex; align-items:center; gap:1px; }
+.tag-actions-trigger { display:inline-flex; align-items:center; justify-content:center; width:22px; height:24px; padding:0; border:0; border-radius:4px; color:var(--ink-muted); background:transparent; opacity:.6; }
+.record-tag:hover .tag-actions-trigger,.tag-actions-trigger:focus-visible { opacity:1; background:var(--surface-subtle); }
+.tag-actions-panel { position:fixed; z-index:70; width:min(270px,calc(100vw - 16px)); padding:14px; border:1px solid var(--line); border-radius:8px; background:var(--surface); color:var(--ink); box-shadow:0 8px 28px var(--shadow-color); }
+.tag-actions-panel header { display:flex; align-items:center; justify-content:space-between; font-size:12px; color:var(--ink-secondary); margin-bottom:12px; }
+.tag-actions-panel label { display:grid; gap:6px; font-size:12px; }
+.tag-actions-panel input { width:100%; min-width:0; padding:8px; border:1px solid var(--line); border-radius:5px; background:var(--surface); color:var(--ink); font-size:14px; }
+.tag-actions-panel form>div { display:flex; justify-content:space-between; align-items:center; margin-top:14px; gap:10px; }
+.tag-actions-panel .button { padding:7px 12px; font-size:12px; }
+.tag-actions-panel [role=alert],.recall-query-error { font-size:12px; color:var(--danger); }
+.recall-clues { display:flex; flex-wrap:wrap; gap:5px; margin:7px 0; font-size:11px; color:var(--ink-secondary); }
+.recall-clues span { border:1px solid var(--line); border-radius:4px; padding:3px 5px; }
+.history-review-host { display:flex; flex:1; min-height:0; }
+.history-review { display:flex; flex:1; min-width:0; flex-direction:column; overflow:hidden; }
+.history-review-form { padding:10px 16px; border-bottom:1px solid var(--line); flex-shrink:0; }
+.history-review-form>input { width:100%; padding:8px; margin-bottom:8px; border:1px solid var(--line); border-radius:6px; font:inherit; color:var(--ink); background:var(--surface); }
+.history-review-form>div { display:flex; gap:7px; }
+.history-review-form select { min-width:0; max-width:42%; flex:1; padding:6px; border:1px solid var(--line); border-radius:5px; font-size:12px; background:var(--surface); color:var(--ink); }
+.history-review-form .button { padding:6px 10px; font-size:12px; flex-shrink:0; }
+.history-review-content { flex:1; min-height:0; overflow:auto; overscroll-behavior:contain; padding:14px 16px; scrollbar-width:thin; }
+.history-overview { border:1px solid var(--line); border-radius:7px; padding:12px; margin:0 0 18px; }
+.history-overview h3 { font-size:14px; margin:0 0 5px; }.history-overview>p { font-size:12px; color:var(--ink-secondary); margin:0 0 10px; }
+.history-overview button { display:block; width:100%; padding:8px 0; border:0; background:transparent; color:var(--ink); text-align:left; }
+.history-overview button+button { border-top:1px solid var(--line-subtle); }
+.history-overview button>span { display:block; font-size:11px; color:var(--ink-secondary); margin-bottom:5px; }
+.history-overview q { display:block; font-size:13px; line-height:1.7; white-space:pre-wrap; overflow-wrap:anywhere; }
+.history-timeline { list-style:none; padding:0 0 0 12px; margin:0 0 18px; border-left:1px solid var(--line); }
+.history-timeline li { position:relative; padding:0 0 22px 7px; }
+.history-timeline li::before { position:absolute; content:''; width:5px; height:5px; border-radius:50%; background:var(--ink-muted); top:5px; left:-15px; }
+.history-timeline time { color:var(--ink-secondary); font-size:11px; }.history-timeline h3 { font-size:14px; line-height:1.6; margin:6px 0; }
+.history-timeline blockquote { font-size:13px; line-height:1.75; padding:0; margin:0 0 7px; border:0; white-space:pre-wrap; overflow-wrap:anywhere; }
+.history-timeline .text-button { font-size:12px; }
+.review-discuss { width:100%; font-size:12px; }
+.ai-review-scope { display:grid; grid-template-columns:1fr auto; gap:6px; font-size:12px; color:var(--ink-secondary); }
+.ai-review-scope>span { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }.ai-review-scope>small { grid-column:1/-1; font-size:11px; }.ai-review-scope .text-button { grid-column:2; grid-row:1; font-size:11px; }.ai-review-scope>p { grid-column:1/-1; margin:0; }
+@media(max-width:580px){ .tag-actions-trigger { width:26px; height:28px; opacity:1; } .note-inquiry:has(.history-review-host){max-height:calc(100dvh - 76px);bottom:56px;} }

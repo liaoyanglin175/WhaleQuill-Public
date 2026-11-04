@@ -1,0 +1,9 @@
+.app-shell[data-desktop=true] .page-header{position:relative;padding-right:124px;max-width:none}
+.window-controls{position:fixed;right:0;top:0;display:flex;z-index:250;height:32px;align-items:stretch}
+.window-controls button{display:grid;place-items:center;width:38px;padding:0;border:0;border-radius:0;background:transparent;color:var(--ink-secondary)}
+.window-controls button:hover{background:#e9e9ec;color:var(--ink)}.window-controls .window-close:hover{background:#c93434;color:#fff}
+.window-control-error{position:absolute;right:0;top:32px;max-width:240px;padding:8px;background:var(--surface);border:1px solid var(--line);font-size:12px;color:var(--danger);z-index:26}
+.app-shell[data-desktop=true] .page-header,.app-shell[data-desktop=true] .sidebar{user-select:none}
+.app-shell[data-desktop=true] .note-inquiry.is-docked{top:32px;height:calc(100dvh - 32px);max-height:calc(100dvh - 32px)}
+@media(max-width:800px){.app-shell[data-desktop=true] .page-header{padding-right:0}.app-shell[data-desktop=true] .sidebar .new-record-button{margin-right:112px}.app-shell[data-desktop=true] .global-note-search{max-width:205px}}
+.trash-retention-settings>label{display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:13px}.trash-retention-settings select{padding:6px 9px;border:1px solid var(--line);border-radius:6px;background:var(--surface)}.trash-retention-confirm{border:1px solid var(--line);padding:12px;border-radius:8px;font-size:13px}.trash-retention-confirm button{margin-right:8px}.trash-expiry{font-size:12px;color:var(--ink-muted);margin-top:7px}

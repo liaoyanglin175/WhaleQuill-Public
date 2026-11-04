@@ -1,0 +1,14 @@
+/* Shared neutral foundation. Character art and semantic status colors stay independent. */
+:root {
+  --canvas:#f8f8f8; --surface:#ffffff; --surface-subtle:#f2f2f3; --surface-hover:#ededf0; --surface-selected:#e8e8ec;
+  --ink:#24262b; --ink-secondary:#62656e; --ink-muted:#737680; --on-action:#ffffff;
+  --line:#e5e5e8; --line-strong:#bec0c7; --action:#24262b; --action-hover:#3c3e45;
+  --focus-ring:#7b7e88; --focus-wash:rgb(36 38 43 / 7%); --shadow-color:rgb(24 25 29 / 8%); --backdrop:rgb(24 25 29 / 16%);
+  --danger:#b54742; --danger-surface:#fff3f1; --warning:#8b6529; --warning-surface:#fff7e8; --success:#2d7460; --highlight:#fff0b5;
+  --radius-control:7px; --radius-surface:10px; --font-body-main:16px; --font-detail:13px;
+  --font-interface:"Segoe UI","Microsoft YaHei UI","Microsoft YaHei",system-ui,sans-serif;
+  --text-strong:var(--ink); --text-secondary:var(--ink-secondary); --text-muted:var(--ink-muted);
+  --surface-main:var(--surface); --surface-muted:var(--surface-subtle); --line-subtle:var(--line); --accent-main:var(--action);
+  --green:var(--action); --green-dark:var(--action-hover); --muted:var(--ink-muted); --border:var(--line); --paper:var(--surface); --font-body:var(--font-body-main); --font-secondary:var(--font-detail);
+  color-scheme:light;
+}

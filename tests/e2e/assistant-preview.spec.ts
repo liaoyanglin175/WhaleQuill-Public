@@ -1,0 +1,9 @@
+import {test,expect} from '@playwright/test';
+test('选中未保存片段请求思考，预览和浏览器提示不会自动保存或联网',async({page})=>{
+ const requests:string[]=[];page.on('request',request=>{if(request.url().includes('api.deepseek.com'))requests.push(request.url());});await page.goto('/');await page.getByRole('button',{name:'写一条',exact:true}).click();const body=page.getByLabel('记录正文',{exact:true});await body.fill('想重新考虑云同步，但担心维护成本。');await body.press('Control+Home');await body.press('Control+Shift+End');await page.getByRole('toolbar',{name:'选中文字样式'}).getByRole('button',{name:'更多文字操作'}).click();await page.getByRole('toolbar',{name:'选中文字样式'}).getByRole('button',{name:'聊聊',exact:true}).click();
+ await expect(page.getByLabel('想和大肥鱼讨论什么？')).toBeVisible();await expect(page.locator('.ai-context')).toContainText('想重新考虑云同步');await expect(page.locator('.save-state')).toContainText('尚未保存');await page.getByRole('button',{name:'发送前预览',exact:true}).click();await expect(page.getByRole('region',{name:'发送内容预览'})).toContainText('没有找到相关历史');await expect(page.getByRole('button',{name:'发送并思考',exact:true})).toBeDisabled();await expect(page.locator('.record-card')).toHaveCount(0);expect(requests).toEqual([]);
+ await page.getByRole('button',{name:'关闭聊天',exact:true}).click();await expect(page.locator('.save-state')).toContainText('尚未保存');
+});
+test('宠物提供思考入口，手机浮窗仍完整处于窗口内',async({page})=>{
+ await page.setViewportSize({width:390,height:844});await page.goto('/');await page.locator('.companion-character').click({button:'right'});await page.getByRole('menuitem',{name:'聊聊',exact:true}).click();await expect(page.getByRole('tab',{name:'聊聊'})).toHaveAttribute('aria-selected','true');const box=(await page.locator('.note-inquiry').boundingBox())!;expect(box.x).toBeGreaterThanOrEqual(0);expect(box.x+box.width).toBeLessThanOrEqual(390);expect(box.y+box.height).toBeLessThanOrEqual(844);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});

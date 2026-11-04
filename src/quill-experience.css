@@ -1,0 +1,11 @@
+@font-face{font-family:Cormorant;src:url('/brand/Cormorant-Variable.ttf') format('truetype');font-style:normal;font-weight:300 700;font-display:swap}
+.brand.is-english{gap:8px;padding-inline:2px;max-width:100%}.brand.is-english>.brand-logo{width:38px;height:24px}.brand.is-english .brand-name{min-width:0}
+.brand .brand-english{font-family:Cormorant,Georgia,serif;font-size:24px;font-weight:600;letter-spacing:-.3px;white-space:nowrap;line-height:1.1}
+.app-shell .page-header{width:100%;max-width:none;margin-inline:0;padding-inline:0;min-height:92px}
+.app-shell[data-view=tasks] .page-header,.app-shell[data-view=recall] .page-header{max-width:1040px}
+.app-shell .trash-panel{padding:28px 30px;max-width:none;width:100%}
+.trash-panel .section-intro{margin:0 0 22px}.trash-panel .section-intro p{margin:0;max-width:70ch;font-size:13px;line-height:1.8}
+.trash-panel .trash-row{padding:18px 0;min-height:88px}.trash-panel .trash-row h3{margin:5px 0;font-size:15px}.trash-panel .trash-help{font-size:12px;margin-top:24px;color:var(--ink-muted)}
+.inquiry-launcher:not([data-manual-position=true]){bottom:120px!important}.inquiry-launcher{font-size:13px;max-width:156px}
+.planner-create-fields input[type=time]{max-width:140px}.planner-reminder-preview{font-size:11px;color:var(--ink-muted);margin:8px 0 0;line-height:1.6}
+@media(max-width:800px){.app-shell .page-header{min-height:76px;gap:12px}.app-shell .trash-panel{padding:20px}}

@@ -1,0 +1,6 @@
+2026-10-29 · 内置 image_gen 图像编辑工具（非 CLI/API 密钥方式）
+输入：public/brand/jingjian-original.jpg
+项目输出：public/brand/jingjian-transparent.png
+原图保留，不将编辑结果视为原图再分发授权。
+
+Edit target: the supplied original navy whale/book logo. Make a transparent-background cutout for a desktop notebook app. Preserve the exact whale silhouette and book/page geometry, proportions, dark navy color, eye, tail, flipper and page lines. Remove ONLY the flat pale blue background, including the blue negative space between page strokes and around the whale, preserving crisp anti-aliased edges. Keep original faint internal marks as-is; do not invent details or a different whale, no extra symbols, no text, no wordmark, no shadows, no gradient, no frame. Crop excessive empty canvas so the whale occupies about 88% of the image width, centered. Output clean transparent PNG asset.

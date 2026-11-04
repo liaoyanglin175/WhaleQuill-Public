@@ -1,0 +1,69 @@
+{
+  "version": "0.2.10",
+  "date": "2026-10-29",
+  "source": {
+    "file": "jingjian-original.jpg",
+    "sha256": "9e134f87ae0d8cfa23b692304b60c9f64efdcd15d41007be553f55bed5c36de6",
+    "source": "User supplied original; author and redistribution license remain unverified"
+  },
+  "files": [
+    {
+      "file": "jingjian-transparent.png",
+      "sha256": "ee84f98f2ac83c81387071450a3c2a909c34fdf3f9e1f913bd73bf2d71aede9a"
+    },
+    {
+      "file": "jingjian-wordmark.svg",
+      "sha256": "102754458494ed08aec34dafa4173bc619cf9bca33f37ba47e312a753c561820"
+    },
+    {
+      "file": "jingjian-app-icon.svg",
+      "sha256": "485911530babaea8b9ddb3d6fb57794ca6ab4999b9adf9dda08141142ca20282"
+    },
+    {
+      "file": "Cormorant-Variable.ttf",
+      "sha256": "8f12cb21f05b61649192eaff13eeeb1b5619bc524feeae672fb916974259a076",
+      "bytes": 572892,
+      "source": "https://github.com/google/fonts/tree/main/ofl/cormorant",
+      "modification": "Original bytes unchanged."
+    },
+    {
+      "file": "Cormorant-OFL.txt",
+      "sha256": "60700d351cac4650c51f3f9db318d2a420f8b45052dba2715eb5fec41f0f6956",
+      "bytes": 4387,
+      "source": "https://github.com/google/fonts/tree/main/ofl/cormorant",
+      "modification": "Original bytes unchanged."
+    }
+  ],
+  "edit": {
+    "tool": "Built-in image_gen image edit, transparent output; no CLI API key",
+    "promptFile": "docs/design/jingjian-2026-10-29/transparent-edit-prompt.txt",
+    "scope": "Background adaptation approved by user; retain whale/book character. AI-edited derivative, not pixel-exact extraction."
+  },
+  "typography": {
+    "source": "Bundled LXGW WenKai glyph outlines",
+    "script": "scripts/make-jingjian-wordmark.py",
+    "license": "public/fonts/NOTICE.md"
+  },
+  "native": {
+    "source": "jingjian-app-icon.svg",
+    "script": "scripts/make-jingjian-icon.mjs",
+    "conversion": "tauri icon --fit contain",
+    "icoSHA256": "df6483b5918571cc9b0dd17733f5ce3f7e42992ed986d310ce17516e7351ccbd"
+  },
+  "localOnly": true,
+  "redistributionRightsVerified": false,
+  "englishWordmark": {
+    "text": "WhaleQuill",
+    "family": "Cormorant",
+    "weight": 600,
+    "license": "Cormorant-OFL.txt",
+    "layout": {
+      "appliedInVersion": "0.2.13",
+      "fontSize": 24,
+      "logoWidth": 38,
+      "logoHeight": 24,
+      "gap": 8,
+      "scope": "English brand only"
+    }
+  }
+}

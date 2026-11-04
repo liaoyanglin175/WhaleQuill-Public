@@ -1,0 +1,132 @@
+:root {
+  --text-strong: var(--ink);
+  --text-secondary: var(--ink-secondary);
+  --text-muted: var(--ink-muted);
+  --surface-main: var(--surface);
+  --surface-muted: var(--surface-subtle);
+  --line-subtle: var(--line);
+  --accent-main: var(--action);
+  --font-body: var(--font-body-main);
+  --font-secondary: var(--font-detail);
+  color: var(--text-strong);
+}
+.brand small, .eyebrow { display: none; }
+.page-header { min-height: 94px; padding: 20px 0; }
+.page-header h1 { margin-top: 0; }
+.nav-label, .version { font-size: 12px; color: var(--text-muted); }
+.nav-item > span { font-size: 14px; }
+.nav-item small, .storage-status { font-size: 12px; color: var(--text-secondary); }
+.search-field { height: 40px; }
+.search-field input, .today-label { font-size: 13px; color: var(--text-secondary); }
+.search-field input::placeholder { color: var(--text-muted); }
+.search-field kbd { font-size: 11px; color: var(--text-muted); }
+.app-footer { font-size: 12px; color: var(--text-muted); height: 34px; }
+.storage-explainer, .storage-explainer .text-button { font-size: 13px; color: var(--text-secondary); }
+.list-heading, .list-heading small, .list-footer button { font-size: 13px; color: var(--text-secondary); }
+.record-card h2, .compact .record-card h2, .record-groups .record-card h2 { font-size: 15px; color: var(--text-strong); }
+.record-card p, .record-groups .record-card p { font-size: 14px; line-height: 1.8; color: var(--text-secondary); }
+.record-kind, .compact .record-kind, .record-card time, .compact .record-card time, .card-tags, .compact .record-card .card-tags { font-size: 12px; color: var(--text-secondary); }
+.record-filters button { font-size: 12px; padding: 7px 9px; color: var(--text-secondary); }
+.date-group-heading, .compact .date-group-heading, .date-group-heading > span { font-size: 12px; color: var(--text-muted); }
+.draft-records > summary, .record-list .draft-records > summary, .draft-card, .record-list .draft-card, .draft-card > time, .record-list .draft-card > time { font-size: 12px; color: var(--text-secondary); }
+.editor-content { padding: 26px 34px 14px; }
+.title-input { font-size: 27px; color: var(--text-strong); }
+.body-input { font-size: var(--font-body); line-height: 1.9; min-height: 190px; color: var(--text-strong); }
+.body-input::placeholder { font-size: 15px; color: var(--text-muted); }
+.record-meta, .type-select select, .record-meta time, .tags-row, .tags-row input { font-size: 13px; color: var(--text-secondary); }
+.editor-breadcrumb { font-size: 12px; color: var(--text-secondary); }
+.toolbar-actions { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
+.toolbar-actions .icon-button { width: 32px; height: 32px; color: var(--text-secondary); }
+.save-state, .word-count, .save-button { font-size: 13px; color: var(--text-secondary); }
+.save-button.primary { color: var(--on-action); }
+.save-state.unsaved { color: var(--warning); }
+.tasks-panel .section-intro h2 { font-size: 23px; }
+.section-intro p { color: var(--text-secondary); font-size: 14px; line-height: 1.9; }
+.task-description h3 { font-size: 16px; color: var(--text-strong); }
+.task-details, .source-link, .task-group-label, .done-toggle { font-size: 13px; color: var(--text-secondary); }
+.task-empty, .list-empty p, .list-empty span, .trash-help { font-size: 14px; color: var(--text-secondary); }
+.records-overview { padding: 24px 28px; }
+.overview-heading { gap: 14px; }
+.overview-mascot { flex-basis: 52px; width: 52px; height: 65px; }
+.overview-topline h2 { font-size: 21px; margin-top: 0; color: var(--text-strong); }
+.overview-topline p, .overview-backups button { font-size: 13px; color: var(--text-secondary); }
+.collection-card { padding: 13px 16px; }
+.collection-card h3 { font-size: 15px; margin: 9px 0 0; }
+.collection-card p, .collection-caption { display: none; }
+.collection-count { font-size: 22px; }
+.collection-count small { font-size: 12px; }
+.overview-recent-toolbar { margin-top: 23px; }
+.overview-recent-toolbar > h2 { font-size: 16px; }
+.overview-recent-toolbar > h2 > span { font-size: 13px; color: var(--text-secondary); }
+.overview-empty h3 { font-size: 15px; color: var(--text-secondary); }
+.overview-empty p { font-size: 14px; color: var(--text-secondary); }
+.overview-bottom-note { font-size: 12px; color: var(--text-muted); }
+.welcome-panel h2 { font-size: 24px; letter-spacing: 0; }
+.welcome-panel p { font-size: 15px; color: var(--text-secondary); }
+.welcome-art { height: 185px; margin-bottom: 12px; }
+.welcome-character { width: 185px; height: 185px; }
+.welcome-hint, .tiny-label { font-size: 12px; color: var(--text-muted); }
+.fish-message p { font-size: 14px; color: var(--text-secondary); }
+.insight-title, .mini-task, .insight-empty, .view-tasks { font-size: 13px; color: var(--text-secondary); }
+.confirm-dialog p { font-size: 14px; color: var(--text-secondary); line-height: 1.85; }
+.confirm-dialog h2 { font-size: 21px; }
+.companion-caption, .companion-caption > span:last-child, .companion-hint { color: var(--text-secondary); }
+.companion-bubble { font-size: 13px; color: var(--text-secondary); }
+.app-shell[data-view=recall] .page-header .search-field { display: none; }
+.companion-slot:empty { display: none; }
+.companion-slot { flex-shrink: 0; }
+.companion-slot .companion-dock { position: relative; top: auto; left: auto; right: auto; bottom: auto; }
+
+.recall-panel { flex: 1; min-height: 0; overflow: auto; border: 1px solid var(--line-subtle); border-radius: 11px; background: var(--surface-main); padding: 30px 36px; }
+.recall-panel h2 { font-size: 25px; margin: 0 0 12px; }
+.recall-form { margin: 24px 0 30px; }
+.recall-form label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 10px; }
+.recall-form > div { display: flex; gap: 10px; }
+.recall-form input, .task-composer input { flex: 1; min-width: 0; width: 100%; padding: 12px 13px; font-size: 15px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface); }
+.recall-results > h3 { font-size: 17px; margin: 0 0 8px; }
+.recall-scope, .recall-empty { font-size: 14px; color: var(--text-secondary); line-height: 1.9; }
+.recall-result { padding: 22px 0; border-top: 1px solid var(--line-subtle); }
+.recall-result header { display: flex; align-items: baseline; gap: 12px; justify-content: space-between; }
+.recall-result h4 { font-size: 18px; margin: 0; }
+.recall-result time { font-size: 13px; color: var(--text-secondary); white-space: nowrap; }
+.recall-result blockquote { margin: 17px 0; padding: 12px 17px; border-left: 3px solid var(--line); background: var(--surface-muted); }
+.recall-result blockquote > span { font-size: 12px; color: var(--text-muted); }
+.recall-result blockquote p { font-size: 16px; line-height: 1.9; white-space: pre-wrap; overflow-wrap: anywhere; max-height: 190px; overflow: auto; margin: 8px 0 12px; }
+.recall-result .text-button { display: flex; align-items: center; gap: 6px; padding: 0; font-size: 13px; }
+.task-composer { width: min(560px, calc(100vw - 32px)); max-width: 560px; max-height: calc(100dvh - 40px); overflow: auto; }
+.task-candidates { display: grid; gap: 7px; margin: 16px 0 22px; max-height: 220px; overflow-y: auto; }
+.task-candidate { display: block; text-align: left; width: 100%; padding: 10px 12px; border: 1px solid var(--line-subtle); background: var(--surface-muted); border-radius: 7px; font-size: 14px; line-height: 1.7; overflow-wrap: anywhere; }
+.task-candidate span { display: block; font-size: 12px; color: var(--text-secondary); }
+.task-name-label { display: block; font-size: 14px; margin-bottom: 9px; }
+
+.app-shell.is-focus { height: 100dvh; overflow: hidden; background: var(--surface-main); }
+.is-focus > .sidebar, .is-focus .page-header, .is-focus .record-list, .is-focus .insight-panel, .is-focus .app-footer, .is-focus > .companion-dock, .is-focus .storage-explainer, .is-focus .recovery-banner { display: none; }
+.is-focus .main-area { width: 100%; max-width: 1120px; padding: 12px 24px; margin: 0 auto; min-height: 0; }
+.is-focus .record-workspace { display: flex; flex: 1; width: 100%; min-height: 0; height: auto; border: 0; border-radius: 0; box-shadow: none; }
+.is-focus .editor-panel { width: 100%; flex: 1; min-height: 0; }
+.is-focus .editor-content { padding: 25px clamp(16px, 5vw, 62px) 16px; }
+.is-focus .editor-footer { padding: 14px 20px; }
+
+@media (max-width: 800px) {
+  .sidebar nav { overflow-x: auto; max-width: 100%; scrollbar-width: thin; padding-bottom: 4px; }
+  .nav-item { flex: 0 0 auto; padding: 9px 11px; }
+  .nav-item > span { font-size: 12px; }
+  .page-header { min-height: 80px; padding: 15px 0; }
+  .header-right { gap: 10px; }
+  .records-overview { padding: 20px 16px; }
+  .overview-topline h2 { font-size: 19px; }
+  .collection-card { padding: 11px 9px; }
+  .collection-card h3 { font-size: 13px; }
+  .record-workspace { height: calc(100dvh - 240px); }
+  .record-meta, .type-select select, .record-meta time, .tags-row, .tags-row input { font-size: 12px; }
+  .editor-content { padding: 20px 20px 12px; }
+  .save-state, .word-count, .save-button { font-size: 12px; }
+  .save-state { white-space: normal; }
+  .body-input { min-height: 170px; }
+  .recall-panel { padding: 25px 20px; min-height: 540px; }
+  .recall-form > div { flex-wrap: wrap; }
+  .recall-form input { flex-basis: 100%; }
+  .is-focus .main-area { padding: 6px 10px; }
+  .is-focus .record-workspace { min-height: 0; height: auto; }
+  .is-focus .body-input { min-height: 90px; }
+}
